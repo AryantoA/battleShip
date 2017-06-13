@@ -1,0 +1,55 @@
+<!--changing the function table generateTable by removing the console.log and using appendChild and create Element and assign the variable with ID-->
+<!--you are adding the 3 button as well on the bottom of the table-->
+
+<html>
+<head>
+   <link rel="stylesheet" href="styles.css">
+   <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <script>
+     function tableGenerator(){
+        var tableSize = Number(document.getElementById("demo").value)
+        console.log("<table id='tablegenerator"+tableSize+"'>")
+
+        var myTableDiv = document.getElementById("myDynamicTable");
+     
+        var table = document.createElement('TABLE');
+        table.border='1';
+   
+        var tableBody = document.createElement('TBODY');
+        table.appendChild(tableBody);
+       
+        for ( var i = 0 ; i < tableSize ; i++) {
+            var tr = document.createElement('TR');
+            tableBody.appendChild(tr);
+                for ( var j = 0 ; j < tableSize ; j++){
+                    var td = document.createElement('TD');
+                    td.id ="row"+i+"column"+j 
+                    td.appendChild(document.createTextNode("Cell " + i + "," + j));
+                    tr.appendChild(td);
+                }
+
+            }
+            myTableDiv.appendChild(table);
+        }
+    </script>
+</head>
+<body>
+   <H1>Battleship Game</H1>
+    <div id="myDynamicTable">
+    Input your table size that you want to play:<br>
+    <input type="number" name="tableSize" id="demo"><br>
+    
+    <button type="button" onclick="tableGenerator()">Generate Table</button>
+    </div>
+
+
+
+   <button>Guess Hit/Miss</button>
+   <button>Hit to Miss</button>
+   <button>Game Over</button> 
+   
+         
+
+</body> 
+
+</html>

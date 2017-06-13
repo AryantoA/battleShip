@@ -1,0 +1,32 @@
+tableGenerator  : function
+    args        : null
+    return      : null
+    behaviour   : generate dynamic table based on what the user input in HTML
+    purpose     : allow user to see the table which will shown in HTML
+    
+nextPlayer      : Boolean
+    initialised : true
+    purpose     : keep track player
+
+movesState      : Array
+    initialised : null
+    purpose     : store all the moved made by the player
+
+boardStateGen   : function
+    args        : null
+    return      : null \
+    behaviours  : Generate the null of the boardState which will be saved in Move State
+    purpose     : to generate information for movesState
+    
+genTable        : function
+    args        : null
+    return      : null
+    behaviours  : to call the function of tableGenerator and BoardStateGen
+    Purpose     : to link the front HTML TO the code behind it 
+    
+
+moves           : function 
+    args        : box
+    return      : null
+    behaviours  : to put x and o in the box 
+    purpose     : drawing X and O in the board
